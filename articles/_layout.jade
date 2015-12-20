@@ -1,0 +1,9 @@
+extends ../_default.jade
+
+
+block main
+  article
+    h2= title
+    p.meta= date
+    img.meta(src="#{image}")
+    != yield

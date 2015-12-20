@@ -1,0 +1,51 @@
+brand-white = #F9F2E7
+brand-black = #111
+brand-grey = #939393
+brand-lightgrey = #ddd
+brand-blue = #4078C0
+brand-radius = 2px
+brand-font = "PT Serif", serif
+
+html, body
+  margin 0
+  padding 0
+  height 100%
+  font-family brand-font
+  font-size 16px
+  color brand-black
+
+a, a:hover, a:active, a:visited
+  color brand-blue
+  text-decoration none
+  outline none
+
+
+header
+  display flex
+  justify-content center
+  border-bottom 1px solid brand-lightgrey
+  h1
+    max-width 800px
+    flex 1
+    font-size 24px
+    font-weight: 700
+    a, a:hover, a:active, a:visited
+      color brand-black
+
+main
+  display flex
+  justify-content center
+  article
+    max-width 800px
+    flex 1
+    h2
+      margin-bottom 0
+    img
+      object-fit cover
+      width 100%
+    img.meta
+      height: 200px
+    p.meta
+      margin-top: 0
+      color: brand-grey
+      border-bottom: 1px dotted transparent;

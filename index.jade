@@ -1,0 +1,10 @@
+extends _default.jade
+
+block main
+  for article, slug in public.articles._data
+    article
+      h2: a(href="/articles/#{slug}")= article.title
+      p.meta= article.date
+      img.meta(src="#{article.image}")
+      p: != partial("/articles/" + slug).split("</p>")[0]
+      a(href="/articles/#{slug}") Read more&hellip;
