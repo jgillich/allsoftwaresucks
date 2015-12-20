@@ -1,4 +1,6 @@
-language: nodejs
+language: node_js
+node_js:
+  - "4.2"
 install: npm install -g harp
 script: harp compile
 sudo: false
