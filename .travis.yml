@@ -1,0 +1,14 @@
+language: nodejs
+install: npm install -g harp
+script: harp compile
+sudo: false
+after_success: |
+  [ $TRAVIS_BRANCH = master ] &&
+  [ $TRAVIS_PULL_REQUEST = false ] &&
+  export PATH=$HOME/.local/bin:$PATH &&
+  pip install ghp-import --user `whoami` &&
+  ghp-import -n www &&
+  git push -fq https://${TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
+env:
+  global:
+    - secure: RgR1UEHwtHm7g5b+++JrUB9ZB4wM7yYASAvRzBkuNc1fqOoQh74RQerzHzKVm74NOcelSFGOZTmH+OiY18a4G6tNuGcSP7Xm5jpa7EYDcVMWwipjyr/TVmCSZ6GMKqt5pyf+ZwPJVJ2tyjG3t3qaT9O+YPnP4UEsD2hI+QKG37GCz5m3M6GK6POxbs5xFrdHMaF8rd1P1UeStTh3WdZYIB9G/w3OjwttQJK3XkSOkdGAwaM3DiTZg/TlkfANXe9G5QPgD9hJK+eJuHH6MlDfCjLDndQPQ3Thrrm9GiNpoAz638sXq1iAMmrumZeANwmbdnv5gBpOW1eac2DK29HfZzoAAarGOJc+up4qFrK4vYsfrbQLT7sxZWR5AB4kB65Qk2nSbjLlZT0HPyQkLvEQXx4VFTF/PGt6TR7JIZLDEbrIATyBb+23rO7UzaaKKYbqar8vfKu5qbUc1m9zTgn4QNxbfkZIBu2/i6j6mffiULGiCPoZ0tMch6jc43b/q83sMaLAEoGeEjdcLiHWeQpIx63E5dV16DMO/MdIqRSUGqVJSQMNU9c2Gc5ic2hFFnveIGgjXL6ZSlAU26TGvRoOKVjCmw4Mh1Qbc6tVygYNgCyNtIUQKmw1r6F7T20CC+FhC8jrpJHDL/Low1QtjzY8aTBtrtKU+aQDJqgqFCaJJ68=
