@@ -14,10 +14,12 @@ html, body
   font-size 16px
   color brand-black
 
-a, a:hover, a:active, a:visited
+a, a:visited
   color brand-blue
   text-decoration none
   outline none
+a:hover
+  border-bottom: 1px dotted brand-black;
 
 
 header
@@ -29,7 +31,7 @@ header
     flex 1
     font-size 24px
     font-weight: 700
-    a, a:hover, a:active, a:visited
+    a, a:visited
       color brand-black
 
 main
@@ -48,4 +50,9 @@ main
     p.meta
       margin-top: 0
       color: brand-grey
-      border-bottom: 1px dotted transparent;
+
+footer
+  display flex
+  justify-content center
+  a, a:visited
+    color brand-black
